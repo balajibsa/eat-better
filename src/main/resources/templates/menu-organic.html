@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head   th:replace="fragments/imports :: import">    </head>
+    <body class="page">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Start page-frame -->
+        <div class="page-frame">
+            <div class="frame-top"></div>
+            <div class="frame-right"></div>
+            <div class="frame-bottom"></div>
+            <div class="frame-left"></div>
+        </div>
+        <!-- End page-frame -->
+
+        <!-- Start mobile-nav -->
+        <div class="mobile-nav-container clearfix">
+            <div class="main-nav-trigger mobile-nav-trigger">
+                <a href="#"></a>
+            </div>
+        </div>
+        <!-- End mobile-nav -->
+
+        <!-- Start main-nav-trigger -->
+        <div class="main-nav-trigger style2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="handle" href="#">
+                            <span class="bars">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </span>
+                        </a>
+                    </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+            </div><!-- /container -->
+        </div>
+        <!-- End main-nav-trigger -->
+
+	 <div  th:replace="fragments/menu :: menu">
+	 </div>
+
+        <!-- Start wrapper -->
+        <div class="wrapper">
+        
+            <!-- Start main-header -->
+            <header class="main-header scrollme" id="top">
+                <div class="top-banner-container top-banner-container-style1">
+                    <div class="top-banner-bg custom-bg33 parallax-bg" data-stellar-background-ratio="0.7"></div>
+                    <div class="top-banner">
+                        <div class="top-image animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0">
+                            <img src="img/logo/logo-style3.png" alt="Gourmet About"/>
+                        </div><!-- /top-image -->
+                        <div class="bottom-image animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0">
+                            <img src="img/slider-images/our-menu2.png" alt="Gourmet About"/>
+                        </div><!-- /bottom-image -->
+                    </div><!-- /top-banner -->
+                </div><!-- /top-banner-container -->
+            </header>
+            <!-- End main-header -->
+
+            <section class="menus menus-full style3 dark-bg white-bg">
+                <div class="row">
+                    <div class="left-section white-bg">
+                        <div class="col-md-8 pull-right menus-container">
+                            <div class="menu-carousel wow fadeInLeft">
+                                <div class="menu col-md-12"  th:each="foodEntry,counter : ${foods}">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <header class="section-title style3">
+                                                <h1><span th:text="${'Our ' + foodEntry.key}"></span> </h1>
+                                                <p  th:text="${foodTimings[foodEntry.key]}"></p>
+                                            </header>
+                                        </div><!-- /col-md-8 -->
+                                        <div class="col-md-12">
+                                            <div class="food"   th:each="food : ${foodEntry.value}">
+                                                <h6 class="food-name" th:text="${food.name}"></h6>
+                                                <div class="food-desc">
+                                                    <div class="food-details">
+                                                        <span  th:text="${food.description}"></span>
+                                                    </div><!-- /food-details -->
+                                                    <div class="dots"></div>
+                                                    <div class="food-price">
+                                                        <span   th:text="${food.price}"></span>
+                                                    </div><!-- /food-price -->
+                                                </div><!-- /food-desc -->
+                                            </div><!-- /food -->
+                                        </div><!-- /col-md-12 -->
+                                    </div><!-- /row -->
+                                </div><!-- menu -->
+ 
+                            </div><!-- /menu-carousel -->
+                            <div class="menu-carousel-nav"></div>
+                        </div><!-- /menus-container -->
+                    </div><!-- /left-section -->
+                    <div class="right-section">
+                        <div class="col-md-4 menu-meals-container wow fadeInRight">
+                            <ul class="menu-meals">
+                                <li   th:each="foodTiming : ${foodTimings}">
+                                    <figure><img th:src= "${foodTimingImages[foodTiming.key]}" alt="Marine Food Meal"/></figure>
+                                    <div class="meal-details">
+                                        <h3 th:text="${foodTiming.key}"></h3>
+                                        <p th:text="${foodTiming.value}"></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div><!-- /menu-meals-container -->
+                    </div><!-- /right-section -->
+                </div><!-- /row -->
+            </section><!-- /menu-container -->
+
+            <section class="call-to-action style2 dark-bg">
+                <div class="custom-bg43 parallax-bg" data-stellar-background-ratio="0.5"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>coffee and love are best when they are hot!</h1>
+                            <a href="#" class="custom-button button-style9 animateme"><i class="icon-eye"></i>View Details</a>
+                        </div><!-- /col-md-12 -->
+                    </div><!-- /row -->
+                </div><!-- /container -->
+            </section>
+
+            <section class="map style3">
+                <div class="map-container wow fadeInDown">
+                    <div id="google-map"></div>
+                    <div id="cd-zoom-in"></div>
+                    <div id="cd-zoom-out"></div>
+                </div><!-- /map-container -->
+            </section>
+
+            <footer class="main-footer style3"    th:replace="fragments/footer :: footer">
+            </footer>
+
+        </div><!-- /wrapper -->
+        <!-- End wrapper -->
+
+        <script src="js/vendor/jquery-2.1.3.min.js"></script>
+        <script src="js/jquery.scrollme.min.js"></script>
+        <script src="js/cd-google-map-green.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

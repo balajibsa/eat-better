@@ -1,0 +1,7 @@
+Spicy Baked Eggs,Local**Greens**Eggs,gallery18.jpg,$,19.99
+Grilled Meat with Fruits,Local**Fruits**Meat,gallery19.jpg,$,34.95
+Black Pasta with Meat,Italian**Pasta**Meat,gallery20.jpg,$,27.95
+Chips with Sour Cream,Local**Greens**Chips,gallery23.jpg,$,13.99
+Taco with Meat &amp; Avocado,mexican**fruits**meat**taco,gallery22.jpg,$,11.89
+Spring Fruit Salad,Spanish**Fruits**Salad,gallery21.jpg,$,24.95
+Spring Fruit Salad,Spanish**Fruits**Salad,gallery21.jpg,$,24.95

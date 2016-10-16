@@ -1,0 +1,237 @@
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org">
+<head   th:replace="fragments/imports :: import">    </head>
+    <body class="page">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Start page-frame -->
+        <div class="page-frame">
+            <div class="frame-top"></div>
+            <div class="frame-right"></div>
+            <div class="frame-bottom"></div>
+            <div class="frame-left"></div>
+        </div>
+        <!-- End page-frame -->
+
+        <!-- Start mobile-nav -->
+        <div class="mobile-nav-container clearfix">
+            <div class="main-nav-trigger mobile-nav-trigger">
+                <a href="#"></a>
+            </div>
+        </div>
+        <!-- End mobile-nav -->
+
+        <!-- Start main-nav-trigger -->
+        <div class="main-nav-trigger style2 handles-left">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="handle" href="#">
+                            <span class="bars">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </span>
+                        </a>
+                    </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+            </div><!-- /container -->
+        </div>
+        <!-- End main-nav-trigger -->
+
+	 <div  th:replace="fragments/menu :: menu">
+	 </div>
+
+        <!-- Start wrapper -->
+        <div class="wrapper">
+        
+            <!-- Start main-header -->
+            <header class="main-header scrollme" id="top">
+                <div class="container">
+                    <div class="shopping-cart style3">
+                        <div class="cart-container clearfix">
+                            <a href="#" class="cart-link"><span th:text="${#lists.size(shoppingCartDetails.products)}"> </span></a>
+                            <div class="cart-items">
+                                <div class="cart-counter">
+                                    <h5><span><span  th:text="${#lists.size(shoppingCartDetails.products)}"></span> Items</span> In Cart</h5>
+                                </div><!-- /cart-counter -->
+                                <a href="" class="remove-items"><i class="fa fa-times-circle"></i></a>
+                                <ul>
+									<li th:each="product : ${shoppingCartDetails.products}">
+                                        <div class="item-container clearfix">
+                                            <figure><img th:src="${product.image.uri}"  alt="Marine Food Items"/></figure>
+                                            <p class="food-name" th:text="${product.name}"> </p>
+                                            <p class="food-price" th:text="${product.currency.code + product.price}"></p>
+                                        </div><!-- /item-contaeinr -->
+                                    </li>
+                                </ul>
+                                <a href="store-cart.html" class="button view-cart-btn">View Cart</a>
+                                <a href="store-checkout.html" class="button checkout-btn">Checkout</a>
+                            </div><!-- /cart-items -->
+                        </div><!-- /cart-container -->
+                    </div><!-- /shopping-cart -->
+                </div><!-- /container -->
+                <div class="top-banner-container top-banner-container-style2">
+                    <div class="top-banner-bg custom-bg32 parallax-bg" data-stellar-background-ratio="0.5"></div>
+                    <div class="top-banner style2">
+                        <div class="top-image animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0">
+                            <img src="img/logo/logo-style3.png" alt="Gourmet About"/>
+                        </div><!-- /top-image -->
+                        <div class="bottom-image animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0">
+                            <img src="img/slider-images/our-blog2.png" alt="Gourmet About"/>
+                        </div><!-- /bottom-image -->
+                    </div><!-- /top-banner -->
+                    <div class="header-bottom-bar style3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <ul class="category-filter store-category-filter">
+                                        <li class="filter active" data-filter="all"><span>All Products</span></li>
+                                        <li class="filter" data-filter=".main"><span>Mains</span></li>
+                                        <li class="filter" data-filter=".salad"><span>Salads</span></li>
+                                        <li class="filter" data-filter=".starter"><span>Starters</span></li>
+                                    </ul>
+                                </div><!-- col-md-9 -->
+                                <div class="col-md-3">
+                                    <form action="#" class="search-form">
+                                        <input type="search" name="search" id="search" placeholder="Search Store"/>
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div><!-- /col-md-3 -->
+                            </div><!-- /row -->
+                        </div><!-- /container -->
+                    </div><!-- /header-bottom-bar -->
+                </div><!-- /top-banner-container -->
+            </header>
+            <!-- End main-header -->
+
+            <section class="food-banner style3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 wow fadeInLeft">
+                            <div class="banner features-right features-active">
+                                <div class="image-container">
+                                    <img src="img/gallery/gallery49.jpg" alt="Marine Food Banner"/>
+                                </div>
+                                <div class="banner-features">
+                                    <div class="banner-features-inner">
+                                        <div class="food-price">
+                                            <p><sup>$</sup>7<sup class="decimals">99</sup></p>
+                                        </div><!-- /food-price -->
+                                        <ul>
+                                            <li>
+                                                <h6>Old School</h6>
+                                                <p>2 farm fresh eggs, 2 bacon or 1 house made sausage, fresh greens</p>
+                                            </li>
+                                            <li>
+                                                <h6>Chilaquiles</h6>
+                                                <p>tortilla chips, fire roasted tomatillo salsa, 2 sunny side farm fresh eggs</p>
+                                            </li>
+                                            <li>
+                                                <h6>Pancakes</h6>
+                                                <p>seasonal toppings</p>
+                                            </li>
+                                        </ul>
+                                    </div><!-- /banner-features-inner -->
+                                </div><!-- /banner-features -->
+                            </div><!-- /banner -->
+                        </div><!-- /col-md-5 -->
+                        <div class="col-md-5 wow fadeInRight">
+                            <div class="banner features-left">
+                                <div class="image-container">
+                                    <img src="img/gallery/gallery16.jpg" alt="Marine Food Banner"/>
+                                    <div class="banner-title">
+                                        <img src="img/slider-images/organic-meat.png" alt="Tasty Brunch"/>
+                                    </div><!-- /banner-title -->
+                                </div>
+                            </div><!-- /banner -->
+                        </div><!-- /col-md-5 -->
+                    </div><!-- /row -->
+                </div><!-- /container -->
+            </section>
+
+            <section class="store-items style3">
+                <div class="container">
+                    <div class="row">
+                        <div  th:each="product,counter : ${products}" class="col-md-4 col-sm-6 col-xs-12 mix main">
+                            <div class="store-item wow fadeInDown">
+                                <figure>
+                                    <a href="store-item-organic.html">
+                                        <img th:src="${product.image.uri}" alt="Marine Food Store"/>
+                                    </a>
+                                </figure>
+                                <h3 class="food-name" th:text="${product.productName}"></h3>
+                                <ul class="food-category">
+                                    <li  th:each="productcategory : ${product.productcategories}" th:text="${productcategory.category.name}"></li>
+                                </ul>
+                                <div class="food-order">
+                                    <p class="food-price" th:text="${product.currency.code + product.price}"></p>
+                                    <a th:href="${'addToCart?productId='+counter.index}" class="add-to-cart-link">Add To Cart</a>
+                                </div><!-- /food-order -->
+                            </div><!-- /store-item -->
+                        </div><!-- /col-md-4 -->
+                    </div><!-- /row -->
+                    <div class="load-more align-center wow fadeInUp">
+                        <a href="#" class="custom-button button-style2 load-more-button"><i class="icon-eye"></i>Load More</a>
+                    </div><!-- /load-more -->
+                </div><!-- /container -->
+            </section>
+
+            <section class="clients style3">
+                <div class="container">
+                    <div class="clients-carousel grayscale-image row">
+                        <div class="client-logo-container wow fadeInUp">
+                            <figure class="client-logo">
+                                <img src="img/clients/client1.png" alt="Marine Food Clients"/>
+                            </figure>
+                        </div><!-- /client-logo-container -->
+                        <div class="client-logo-container wow fadeInUp" data-wow-delay="0.2s">
+                            <figure class="client-logo">
+                                <img src="img/clients/client2.png" alt="Marine Food Clients"/>
+                            </figure>
+                        </div><!-- /client-logo-container -->
+                        <div class="client-logo-container wow fadeInUp" data-wow-delay="0.4s">
+                            <figure class="client-logo">
+                                <img src="img/clients/client3.png" alt="Marine Food Clients"/>
+                            </figure>
+                        </div><!-- /client-logo-container -->
+                        <div class="client-logo-container wow fadeInUp" data-wow-delay="0.6s">
+                            <figure class="client-logo">
+                                <img src="img/clients/client4.png" alt="Marine Food Clients"/>
+                            </figure>
+                        </div><!-- /client-logo-container -->
+                        <div class="client-logo-container wow fadeInUp" data-wow-delay="0.8s">
+                            <figure class="client-logo">
+                                <img src="img/clients/client5.png" alt="Marine Food Clients"/>
+                            </figure>
+                        </div><!-- /client-logo-container -->
+                    </div><!-- /row -->
+                </div><!-- /contianer -->
+            </section>
+
+            <section class="map style3">
+                <div class="map-container wow fadeInDown">
+                    <div id="google-map"></div>
+                    <div id="cd-zoom-in"></div>
+                    <div id="cd-zoom-out"></div>
+                </div><!-- /map-container -->
+            </section>
+
+            <footer class="main-footer style3"    th:replace="fragments/footer :: footer">
+            </footer>
+
+        </div><!-- /wrapper -->
+        <!-- End wrapper -->
+
+        <script src="js/vendor/jquery-2.1.3.min.js"></script>
+        <script src="js/jquery.scrollme.min.js"></script>
+        <script src="js/jquery.mixitup.min.js"></script>
+        <script src="js/cd-google-map-green.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

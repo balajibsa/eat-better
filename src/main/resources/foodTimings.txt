@@ -1,0 +1,4 @@
+breakfast,WeekDays 7:30 am - 11:30 am,img/services/service8.png
+Lunch,WeekDays 11:30 am - 02:30 pm,img/services/service7.png
+Dinner,WeekDays 5:30 pm - 10:30 pm,img/services/service6.png
+Drinks,WeekDays 3:30 pm - 10:30 pm,img/services/service5.png
